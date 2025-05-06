@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MyShop</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
+</head>
+<body>
+<header>
+    <span class="title">MyShop</span>
+    <a href="" class="cart-ico">
+        <div>
+            <span>Koszyk</span>
+            <span th:text="${cartItemCount}"></span>
+            <span th:text="${cartTotalPrice}"></span>
+            <span>zł</span>
+        </div>
+    </a>
+</header>
+
+<div class="main-content">
+    <div th:each="item : ${items}" class="item">
+        <p class="item-name" th:text="${item.name}"></p>
+        <img th:src="${item.imgUrl}" alt="Produkt">
+        <div>
+            <span>Cena: </span>
+            <span th:text="${item.price}"></span>
+            <span>zł</span>
+        </div>
+        <a href="" class="add-btn">Dodaj</a>
+    </div>
+</div>
+</body>
+</html>

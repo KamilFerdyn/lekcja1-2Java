@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel Administratora</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+</head>
+<body>
+<h1>Dodaj nowy przedmiot do sklepu</h1>
+<form th:action="@{/admin/add}" method="post">
+  <label>Nazwa produktu:</label>
+  <input type="text" name="name" required>
+
+  <label>Cena:</label>
+  <input type="number" name="price" step="0.01" required>
+
+  <label>Link do obrazka:</label>
+  <input type="url" name="imgUrl">
+
+  <button type="submit">Dodaj</button>
+</form>
+
+</body>
+</html>
